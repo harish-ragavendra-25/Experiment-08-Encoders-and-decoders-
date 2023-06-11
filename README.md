@@ -55,42 +55,65 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+```
+Step1:- Open the quartus II software.
 
+Step2:- Create a new project.
 
+Step3:- Name the projects such that the same name is used for mentioning the name of the module.
 
+Step4:- Develop programmes for both Encoder and Decoder using verilog programming.
+
+Step5:- Run RTL Simulation.
+
+Step6:- Create the Timing diagram.
+
+Step7:- Validate the outputs.
+```
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
-
-
-
-
-
+Developed by: HARISH RAGAVENDRA S
+RegisterNumber:  212222230045
+```
+```
+i)ENCODER:
+module exp8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+```
+ii)DECODER:
+module dec(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c) ;
+assign d1=(~a & ~b &c);
+assign d2=(~a & b &~c);
+assign d3=(~a & b &c);
+assign d4=(a &~b&~c);
+assign d5=(a &~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+```
 ### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
+![encoder rtl](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/5c8c3b92-be31-4a75-a04a-c1c89a18d460)
+![decoder rtl](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/4a890554-4b3f-4ee1-9301-8c7a232f825a)
+### TIMING DIGRAMS 
+## ENCODER:
+![encoder timing](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/ed9800ec-6a2c-4cad-977a-f91d4ae3b5a5)
+![encoder timing 2](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/b62fc7ee-d500-492f-87c7-54f8c094d10a)
+## DECODER:
+![decoder timing](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/05176ab6-0bc9-4bf5-b5aa-8aea1a56a562)
 ### TRUTH TABLE 
-
-
-
-
-
-
+## ENCODER:
+![encoder truth table](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/c370d89d-cf2d-4537-9029-a6cbc9229f0f)
+## DECODER:
+![decoder truth table](https://github.com/harish-ragavendra-25/Experiment-08-Encoders-and-decoders-/assets/114852180/8a3d0a31-ef8e-4439-9cbf-103505979ae0)
 ### RESULTS 
+Thus 8 to 3 Encoder and 3to8 Decoder are implemented successfully using verilog and validate its outputs.
